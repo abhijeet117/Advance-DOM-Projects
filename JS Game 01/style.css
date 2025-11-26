@@ -1,4 +1,4 @@
-body{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,3 +9,39 @@ html, body{
     width: 100%;
 }
 
+#main, section {
+    height: 100%;
+    width: 100%;
+}
+
+
+:root{
+    /* Backgroung Color */
+
+    --bg-primary-color : #0c0c0c;
+
+    /* Text Color */
+
+    --text-primary-color : #f0f0f0;
+
+    /* padding space */
+
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 12px;
+    --space-lg: 16px;
+    --space-xl: 20px;
+    --space-2xl: 32px;
+    --space-3xl: 48px;
+
+    /* F0nt size */
+
+    --font-size-xs: 4px;
+    --font-size-xs: 8px;
+    --font-size-md: 12px;
+    --font-size-lg: 16px;
+    --font-size-xl: 20px;
+    --font-size-2xl: 24px;
+    --font-size-3xl: 28px;
+
+}
