@@ -3,138 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Weather UI</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Weather App UI</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <div class="app-container">
-        <!-- Search Bar -->
-        <header class="search-container">
-            <input type="text" class="search-input" placeholder="Search city...">
-            <div class="search-icon">
-                <svg class="icon" viewBox="0 0 24 24">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    <div class="weather-card">
+        <form action="#" class="search-form">
+            <input type="text" class="weather-input" placeholder="Enter city name" required>
+            <button type="submit" class="search-btn">
+                <!-- Simple SVG Search Icon -->
+                <svg viewBox="0 0 24 24">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
                 </svg>
+            </button>
+        </form>
+
+        <div class="weather-icon-placeholder">
+            <div class="sun-graphic"></div>
+        </div>
+
+        <div class="temperature">24</div>
+        <h2 class="city-name">San Francisco</h2>
+        <div class="weather-status">Sunny</div>
+
+        <div class="details">
+            <div class="col">
+                <div class="details-icon">💧</div>
+                <div class="info">
+                    <p class="humidity">45%</p>
+                    <h3>Humidity</h3>
+                </div>
             </div>
-        </header>
-
-        <!-- Main Content Area -->
-        <main class="weather-dashboard">
-            
-            <!-- Left Side: Main Weather -->
-            <section class="current-weather">
-                <div class="location-badge">
-                    <svg class="icon" style="width:16px; height:16px;" viewBox="0 0 24 24">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                        <circle cx="12" cy="10" r="3"></circle>
-                    </svg>
-                    <span>San Francisco, CA</span>
+            <div class="col">
+                <div class="details-icon">💨</div>
+                <div class="info">
+                    <p class="wind-speed">12 km/h</p>
+                    <h3>Wind Speed</h3>
                 </div>
-
-                <div class="weather-icon-wrapper">
-                    <!-- Sun/Cloud Icon -->
-                    <svg class="icon-large" viewBox="0 0 24 24">
-                        <path d="M17 18a5 5 0 0 0 0-10 5.006 5.006 0 0 0-4.062 2.115 5.5 5.5 0 0 0-10.938.885A5.5 5.5 0 0 0 7 21h10z" fill="rgba(255,255,255,0.2)"></path>
-                        <path d="M19.07 4.93L17.07 6.93" stroke="rgba(255,255,255,0.8)"></path>
-                        <path d="M15.07 2.93L17.07 4.93" stroke="rgba(255,255,255,0.8)"></path>
-                    </svg>
-                </div>
-
-                <h1 class="temperature">72°</h1>
-                <p class="condition">Partly Cloudy</p>
-                <p class="date">Tuesday, 14 Oct</p>
-            </section>
-
-            <!-- Right Side: Grid Details -->
-            <section class="weather-details-grid">
-                
-                <!-- Card 1: Humidity -->
-                <div class="detail-card">
-                    <div class="card-header">
-                        <svg class="icon" viewBox="0 0 24 24">
-                            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
-                        </svg>
-                        <span>Humidity</span>
-                    </div>
-                    <div class="card-value">45%</div>
-                    <div class="card-subtext">Normal</div>
-                </div>
-
-                <!-- Card 2: Wind Speed -->
-                <div class="detail-card">
-                    <div class="card-header">
-                        <svg class="icon" viewBox="0 0 24 24">
-                            <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"></path>
-                        </svg>
-                        <span>Wind</span>
-                    </div>
-                    <div class="card-value">12 <span style="font-size:1rem; font-weight:400;">km/h</span></div>
-                    <div class="card-subtext">North-West</div>
-                </div>
-
-                <!-- Card 3: Feels Like -->
-                <div class="detail-card">
-                    <div class="card-header">
-                        <svg class="icon" viewBox="0 0 24 24">
-                            <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
-                        </svg>
-                        <span>Feels Like</span>
-                    </div>
-                    <div class="card-value">74°</div>
-                    <div class="card-subtext">Slightly warmer</div>
-                </div>
-
-                <!-- Card 4: UV Index -->
-                <div class="detail-card">
-                    <div class="card-header">
-                        <svg class="icon" viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="5"></circle>
-                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
-                        </svg>
-                        <span>UV Index</span>
-                    </div>
-                    <div class="card-value">4</div>
-                    <div class="card-subtext">Moderate</div>
-                </div>
-
-                <!-- Card 5: Air Quality -->
-                <div class="detail-card">
-                    <div class="card-header">
-                        <svg class="icon" viewBox="0 0 24 24">
-                            <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.1a2 2 0 0 1-1-1.72v-.51a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
-                            <circle cx="12" cy="12" r="3"></circle>
-                        </svg>
-                        <span>AQI</span>
-                    </div>
-                    <div class="card-value">32 <span class="aqi-indicator"></span></div>
-                    <div class="card-subtext">Good</div>
-                </div>
-
-                <!-- Card 6: Min/Max Temp -->
-                <div class="detail-card">
-                    <div class="card-header">
-                        <svg class="icon" viewBox="0 0 24 24">
-                            <path d="M23 6l-9.5 9.5-5-5L1 18"></path>
-                            <path d="M17 6h6v6"></path>
-                        </svg>
-                        <span>Min/Max</span>
-                    </div>
-                    <div class="card-value">65° / 78°</div>
-                    <div class="card-subtext">Clear skies</div>
-                </div>
-
-            </section>
-        </main>
+            </div>
+        </div>
     </div>
-
-    <script src="script.js"></script>
-
+<script src="script.js"></script>
 </body>
-
 </html>
